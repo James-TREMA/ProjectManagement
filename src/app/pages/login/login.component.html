@@ -2,15 +2,8 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="email">Email</label>
-      <input 
-        id="email" 
-        formControlName="email" 
-        type="email" 
-        required 
-        aria-required="true"
-        [attr.aria-describedby]="email.invalid && email.touched ? 'emailError' : null"
-      >
-      <div *ngIf="email?.invalid && email?.touched" id="emailError">
+      <input id="email" formControlName="email" type="email" required>
+      <div *ngIf="email?.invalid && email?.touched">
         <small *ngIf="email?.errors?.['required']">L'email est requis.</small>
         <small *ngIf="email?.errors?.['email']">Format d'email incorrect.</small>
       </div>
@@ -18,15 +11,8 @@
     
     <div>
       <label for="password">Mot de passe</label>
-      <input 
-        id="password" 
-        formControlName="password" 
-        type="password" 
-        required 
-        aria-required="true"
-        [attr.aria-describedby]="password.invalid && password.touched ? 'passwordError' : null"
-      >
-      <div *ngIf="password?.invalid && password?.touched" id="passwordError">
+      <input id="password" formControlName="password" type="password" required>
+      <div *ngIf="password?.invalid && password?.touched">
         <small *ngIf="password?.errors?.['required']">Le mot de passe est requis.</small>
         <small *ngIf="password?.errors?.['minlength']">Le mot de passe doit contenir au moins 6 caractères.</small>
       </div>
@@ -35,7 +21,7 @@
     <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
   </form>
 
-  <div *ngIf="errorMessage" class="error" role="alert">
+  <div *ngIf="errorMessage" class="error">
     {{ errorMessage }}
   </div>
 </div>
