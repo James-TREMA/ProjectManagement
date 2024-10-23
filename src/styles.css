@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+/* Styles globaux de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style du body pour une configuration de base */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5; /* Fond doux pour toute la page */
+    color: #333; /* Couleur du texte globale */
+    user-select: none; /* Empêche la sélection de texte partout sauf sur les champs d'entrée */
+    cursor: default; /* Définit un curseur par défaut */
+}
+
+/* Autoriser la sélection du texte et le focus uniquement sur les champs d'entrée, textarea et sélection */
+input, textarea, select {
+    user-select: text; /* Permet de sélectionner du texte dans les champs */
+    cursor: text; /* Montre le curseur texte uniquement dans les champs */
+    font-family: inherit; /* Utilise la police définie dans le body */
+    line-height: normal;
+}
+
+button {
+    cursor: pointer; /* Assure que les boutons affichent un curseur pointer */
+    user-select: none; /* Désactive la sélection du texte pour les boutons */
+}
+
+/* Désactive le curseur d'écriture (text) pour les autres éléments */
+div, span, h1, h2, h3, h4, p {
+    user-select: none; /* Empêche la sélection accidentelle de texte */
+    cursor: default; /* Définit un curseur par défaut pour ces éléments */
+}
+
+/* Empêche tout focus non désiré sur les éléments autres que les champs de saisie */
+:focus {
+    outline: none; /* Retire le contour de focus sur tous les éléments */
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #4A90E2; /* Ajoute une bordure visible pour les éléments de saisie focus */
+}
+
+/* Sélection de texte spécifique */
+::selection {
+    background-color: #4A90E2; /* Couleur de fond de la sélection */
+    color: white; /* Couleur du texte sélectionné */
+}
+
+/* Supprime totalement le cadre bleu pour la checkbox même lorsqu'elle est focus */
+input[type="checkbox"]:focus {
+    outline: none; /* Supprime le contour par défaut */
+    box-shadow: none; /* Supprime les ombres */
+}
+
+/* Si tu veux quand même indiquer visuellement que la checkbox est focus mais de manière subtile */
+input[type="checkbox"]:focus-visible {
+    outline: none; /* Supprime le cadre */
+    box-shadow: none; /* Pas d'ombre */
+}
+
+/* Empêcher le comportement par défaut du focus de persister après un clic */
+input[type="checkbox"]:focus:not(:focus-visible) {
+    outline: none; /* Empêche le cadre lorsque l'élément perd le focus visuellement */
+    box-shadow: none; /* Supprime également l'ombre */
+}
