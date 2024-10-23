@@ -11,13 +11,13 @@
         <!-- Section de gestion des utilisateurs séparée du tableau -->
         <section class="dashboard-section user-management-section">
             <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
-            <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
             <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
         </section>
 
         <!-- Section tableau des utilisateurs avec une séparation claire -->
         <section class="dashboard-section">
             <h3 class="dashboard-userlist-title">Liste des utilisateurs</h3>
+            <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
             <table class="dashboard-userlist-table">
                 <thead>
                   <tr>
