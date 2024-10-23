@@ -1,6 +1,17 @@
 <div class="dashboard-container">
     <h1>Bienvenue dans le tableau de bord</h1>
-    <!-- Bouton de déconnexion -->
-    <button (click)="logout()">Déconnexion</button>
+    
+    <!-- Bouton de déconnexion accessible -->
+    <button (click)="logout()" aria-label="Déconnexion de l'application">Déconnexion</button>
+    
+    <!-- Espace pour les fonctionnalités de gestion des utilisateurs à venir -->
+    <section>
+      <h2>Gestion des utilisateurs</h2>
+      <p>Utilisez le menu ci-dessous pour ajouter, modifier ou supprimer des utilisateurs.</p>
+      
+      <!-- Liens pour les actions futures -->
+      <button (click)="navigateToAddUser()" aria-label="Ajouter un nouvel utilisateur">Ajouter un utilisateur</button>
+      <button (click)="navigateToUserList()" aria-label="Voir la liste des utilisateurs">Voir la liste des utilisateurs</button>
+    </section>
   </div>
   
