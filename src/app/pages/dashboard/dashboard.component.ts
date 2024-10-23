@@ -1,12 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [CommonModule], // Ajout des imports nécessaires ici
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
 
+  constructor(private authService: AuthService, private router: Router) {}
+
+  logout() {
+    this.authService.logout(); // Appel à la méthode logout du service d'authentification
+    this.router.navigate(['/login']); // Rediriger vers la page de connexion
+  }
 }
