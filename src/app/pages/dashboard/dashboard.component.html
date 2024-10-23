@@ -1,49 +1,49 @@
 <div class="dashboard-page-wrapper">
-    <div class="dashboard-container">
-        <!-- En-tête avec le bouton de déconnexion -->
-        <div class="header">
-            <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
-            <div class="logout-container">
-                <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
-            </div>
-        </div>
+  <div class="dashboard-container">
+      <!-- En-tête avec le bouton de déconnexion -->
+      <div class="header">
+          <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
+          <div class="logout-container">
+              <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
+          </div>
+      </div>
 
-        <!-- Section de gestion des utilisateurs séparée du tableau -->
-        <section class="dashboard-section user-management-section">
-            <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
-            <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
-        </section>
+      <!-- Section de gestion des utilisateurs séparée du tableau -->
+      <section class="dashboard-section user-management-section">
+          <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
+          <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
+      </section>
 
-        <!-- Section tableau des utilisateurs avec une séparation claire -->
-        <section class="dashboard-section">
-            <h3 class="dashboard-userlist-title">Liste des utilisateurs</h3>
-            <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
-            <table class="dashboard-userlist-table">
-                <thead>
-                  <tr>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Rôle</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Itération sur la liste des utilisateurs -->
-                  <tr *ngFor="let user of users">
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.role }}</td>
-                    <td>
-                      <!-- Conteneur pour les boutons d'actions -->
-                      <div class="dashboard-action-container">
-                        <button class="dashboard-btn edit-btn" (click)="editUser(user)" [attr.aria-label]="'Modifier ' + user.name">Modifier</button>
-                        <button class="dashboard-btn details-btn" (click)="viewDetails(user)" [attr.aria-label]="'Afficher les détails de ' + user.name">Détails</button>
-                        <button class="dashboard-btn delete-btn" (click)="deleteUser(user)" [attr.aria-label]="'Supprimer ' + user.name">Supprimer</button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-            </table>
-        </section>
-    </div>
+      <!-- Section tableau des utilisateurs avec une séparation claire -->
+      <section class="dashboard-section">
+          <h3 class="dashboard-userlist-title">Liste des utilisateurs</h3>
+          <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
+          <table class="dashboard-userlist-table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>Rôle</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Itération sur la liste des utilisateurs -->
+                <tr *ngFor="let user of users">
+                  <td>{{ user.nom }}</td> <!-- Remplacer 'name' par 'nom' -->
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.role }}</td>
+                  <td>
+                    <!-- Conteneur pour les boutons d'actions -->
+                    <div class="dashboard-action-container">
+                      <button class="dashboard-btn edit-btn" (click)="editUser(user)" [attr.aria-label]="'Modifier ' + user.nom">Modifier</button> <!-- Utilisation de 'nom' -->
+                      <button class="dashboard-btn details-btn" (click)="viewDetails(user)" [attr.aria-label]="'Afficher les détails de ' + user.nom">Détails</button> <!-- Utilisation de 'nom' -->
+                      <button class="dashboard-btn delete-btn" (click)="deleteUser(user)" [attr.aria-label]="'Supprimer ' + user.nom">Supprimer</button> <!-- Utilisation de 'nom' -->
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+      </section>
+  </div>
 </div>

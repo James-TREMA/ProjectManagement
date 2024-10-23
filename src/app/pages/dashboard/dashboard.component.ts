@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../interface/user'; // Utilisation de l'interface User
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,11 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent {
-  users = [
-    { name: 'John Doe', email: 'john.doe@example.com', role: 'Utilisateur' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'Administrateur' }
+  users: User[] = [
+    { nom: 'John Doe', email: 'john.doe@example.com', password: '123456', role: 'user' },
+    { nom: 'Jane Smith', email: 'jane.smith@example.com', password: 'abcdef', role: 'admin' }
   ];
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -27,18 +29,18 @@ export class DashboardComponent {
     this.router.navigate(['/add-user']);
   }
 
-  editUser(user: any) {
-    // Logique pour modifier un utilisateur
+  editUser(user: User) {
     console.log('Modifier utilisateur :', user);
   }
 
-  viewDetails(user: any) {
-    // Logique pour afficher les détails de l'utilisateur
+  viewDetails(user: User) {
     console.log('Détails utilisateur :', user);
   }
 
-  deleteUser(user: any) {
-    // Logique pour supprimer un utilisateur
-    console.log('Supprimer utilisateur :', user);
+  deleteUser(user: User) {
+    const confirmed = confirm(`Êtes-vous sûr de vouloir supprimer l'utilisateur ${user.nom} ?`);
+    if (confirmed) {
+      console.log('Utilisateur supprimé :', user);
+    }
   }
 }
