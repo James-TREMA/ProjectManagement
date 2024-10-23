@@ -1,10 +1,11 @@
 <div class="dashboard-page-wrapper">
     <div class="dashboard-container">
-        <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
-        
-        <!-- Bouton de déconnexion -->
-        <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
-        
+        <!-- En-tête avec le bouton de déconnexion en haut à droite -->
+        <div class="header">
+            <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
+            <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
+        </div>
+
         <section class="dashboard-section">
           <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
           <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
@@ -42,5 +43,4 @@
           </table>
         </section>
     </div>
-  </div>
-  
+</div>

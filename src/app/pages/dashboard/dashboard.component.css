@@ -4,25 +4,31 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f1f1f1; /* Légère teinte pour améliorer la lisibilité */
+    background-color: #f1f1f1;
 }
 
 /* Conteneur principal */
 .dashboard-container {
     padding: 20px;
-    width: 900px; /* Largeur plus large pour garantir l'affichage sans retour à la ligne */
-    background-color: #ffffff; /* Fond blanc pour une meilleure lisibilité */
+    width: 900px;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour donner de la profondeur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête avec le bouton de déconnexion en haut à droite */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 /* Titres et sections */
 .dashboard-title {
     font-size: 2em;
     font-weight: bold;
-    color: #333; /* Gris foncé pour le contraste */
-    margin-bottom: 20px;
-    text-align: center; /* Centrage du titre pour plus d'esthétique */
+    color: #333;
 }
 
 .dashboard-subtitle {
@@ -34,7 +40,7 @@
 
 .dashboard-text {
     font-size: 1em;
-    color: #666; /* Texte légèrement plus foncé pour le contraste */
+    color: #666;
     margin-bottom: 20px;
 }
 
@@ -47,33 +53,33 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Animation douce des changements de couleur */
+    transition: background-color 0.3s ease;
     border: none;
 }
 
 .dashboard-btn:hover {
-    opacity: 0.85; /* Légère diminution de l'opacité au survol */
+    opacity: 0.85;
 }
 
 /* Boutons spécifiques */
 .logout-btn {
-    background-color: #dc3545; /* Rouge pour déconnexion */
+    background-color: #dc3545;
 }
 
 .add-user-btn {
-    background-color: #007bff; /* Bleu pour ajouter un utilisateur */
+    background-color: #007bff;
 }
 
 .edit-btn {
-    background-color: #28a745; /* Vert pour modifier */
+    background-color: #28a745;
 }
 
 .details-btn {
-    background-color: #17a2b8; /* Bleu clair pour afficher les détails */
+    background-color: #17a2b8;
 }
 
 .delete-btn {
-    background-color: #dc3545; /* Rouge pour supprimer */
+    background-color: #dc3545;
 }
 
 /* Conteneur des boutons d'action */
@@ -81,12 +87,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    white-space: nowrap; /* Empêche les boutons de se casser sur plusieurs lignes */
+    white-space: nowrap;
 }
 
 /* Accessibilité des boutons (ajout d'outline pour le focus clavier) */
 .dashboard-btn:focus {
-    outline: 3px solid #0056b3; /* Couleur de focus visible pour l'accessibilité */
+    outline: 3px solid #0056b3;
 }
 
 /* Section gestion des utilisateurs */
@@ -94,7 +100,7 @@
     margin-bottom: 30px;
 }
 
-/* Stylisation du tableau conservée (ne pas modifier) */
+/* Stylisation du tableau conservée */
 .dashboard-userlist-table {
     width: 100%;
     margin-top: 20px;
