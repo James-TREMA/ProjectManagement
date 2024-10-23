@@ -1,1 +1,23 @@
-<p>user-list works!</p>
+<table aria-label="Liste des utilisateurs">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Rôle</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.nom }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button (click)="editUser(user)" [attr.aria-label]="'Modifier ' + user.nom">Modifier</button>
+          <button (click)="viewDetails(user)" [attr.aria-label]="'Voir les détails de ' + user.nom">Détails</button>
+          <button (click)="deleteUser(user)" [attr.aria-label]="'Supprimer ' + user.nom">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
