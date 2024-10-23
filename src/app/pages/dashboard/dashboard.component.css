@@ -19,17 +19,23 @@
 /* En-tête avec le bouton de déconnexion légèrement décalé vers le bas */
 .header {
     display: flex;
-    justify-content: center; /* Center the title horizontally */
-    align-items: center; /* Ensure the title and button are aligned vertically */
+    justify-content: space-between; /* Crée un espace entre le titre et le bouton */
+    align-items: center; /* Assure l'alignement vertical du titre et du bouton */
     margin-bottom: 20px;
+    width: 100%; /* Prend toute la largeur */
 }
 
 /* Titres et sections */
 .dashboard-title {
-    text-align: center;
     font-size: 2em;
     font-weight: bold;
     color: #333;
+    text-align: center; /* Centrer le texte */
+    flex-grow: 1; /* Permet au titre de prendre l'espace restant */
+}
+
+.logout-container {
+    flex-shrink: 0; /* Empêche le bouton de se redimensionner */
 }
 
 /* Gestion des utilisateurs */
