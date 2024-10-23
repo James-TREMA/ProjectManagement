@@ -24,11 +24,6 @@
     margin-bottom: 20px;
 }
 
-/* Conteneur pour ajuster la position du bouton déconnexion */
-.logout-container {
-    margin-top: 15px; /* Déplace le bouton de déconnexion légèrement vers le bas */
-}
-
 /* Titres et sections */
 .dashboard-title {
     text-align: center;
