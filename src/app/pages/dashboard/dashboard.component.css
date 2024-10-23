@@ -1,52 +1,99 @@
+/* Centrer le tableau de bord uniquement dans le conteneur spécifique */
+.dashboard-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hauteur de la vue pour centrer verticalement */
+}
+
 .dashboard-container {
     padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 100%; /* Pour que le tableau de bord prenne toute la largeur possible */
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1, h2, h3 {
+    width: 900px; /* Largeur fixe pour respecter les contraintes de mise en page */
+}
+
+/* Titres */
+.dashboard-title, .dashboard-subtitle, .dashboard-userlist-title {
     font-family: Arial, sans-serif;
     color: #333;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+    margin-bottom: 15px;
+}
+
+/* Texte */
+.dashboard-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Boutons avec couleurs spécifiques */
+.dashboard-btn {
     padding: 10px 20px;
-    margin-top: 10px;
+    margin-right: 10px; /* Ajoute de l'espacement entre les boutons */
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  button:focus {
-    outline: 2px solid #0056b3;
-  }
-  
-  table {
+    border: none;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Rouge pour déconnexion */
+}
+
+.add-user-btn {
+    background-color: #007bff; /* Bleu pour ajouter un utilisateur */
+}
+
+.edit-btn {
+    background-color: #28a745; /* Vert pour modifier */
+}
+
+.details-btn {
+    background-color: #17a2b8; /* Bleu clair pour afficher les détails */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Rouge pour supprimer */
+}
+
+.dashboard-btn:hover {
+    opacity: 0.9;
+}
+
+/* Conteneur de boutons pour garder l'alignement horizontal */
+.dashboard-action-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap; /* Empêche les boutons de se casser sur plusieurs lignes */
+}
+
+/* Empêche les noms de se réorganiser sur plusieurs lignes */
+.dashboard-userlist-name {
+    white-space: nowrap; /* Empêche le saut à la ligne */
+    overflow: hidden;    /* Cache le texte qui déborde */
+    text-overflow: ellipsis; /* Ajoute "..." pour indiquer qu'il manque du texte */
+}
+
+/* Table d'utilisateurs */
+.dashboard-userlist-table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-  }
-  
-  table, th, td {
+}
+
+.dashboard-userlist-table, .dashboard-userlist-table th, .dashboard-userlist-table td {
     border: 1px solid #ddd;
-  }
-  
-  th, td {
+}
+
+.dashboard-userlist-table th, .dashboard-userlist-table td {
     padding: 10px;
     text-align: left;
-  }
-  
-  thead {
+}
+
+.dashboard-userlist-table thead {
     background-color: #f1f1f1;
-  }
-  
+}

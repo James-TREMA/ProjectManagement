@@ -1,41 +1,46 @@
-<div class="dashboard-container">
-    <h1>Bienvenue dans le tableau de bord</h1>
-    
-    <!-- Bouton de déconnexion -->
-    <button (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
-    
-    <section>
-      <h2>Gestion des utilisateurs</h2>
-      <p>Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
-      
-      <!-- Bouton pour ajouter un nouvel utilisateur -->
-      <button (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
-      
-      <!-- Liste des utilisateurs -->
-      <h3>Liste des utilisateurs</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Rôle</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Itération sur la liste des utilisateurs -->
-          <tr *ngFor="let user of users">
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.role }}</td>
-            <td>
-              <!-- Boutons pour modifier, afficher les détails et supprimer un utilisateur -->
-              <button (click)="editUser(user)" [attr.aria-label]="'Modifier ' + user.name">Modifier</button>
-              <button (click)="viewDetails(user)" [attr.aria-label]="'Afficher les détails de ' + user.name">Détails</button>
-              <button (click)="deleteUser(user)" [attr.aria-label]="'Supprimer ' + user.name">Supprimer</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-</div>
+<div class="dashboard-page-wrapper">
+    <div class="dashboard-container">
+        <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
+        
+        <!-- Bouton de déconnexion -->
+        <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
+        
+        <section class="dashboard-section">
+          <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
+          <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
+          
+          <!-- Bouton pour ajouter un nouvel utilisateur -->
+          <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
+          
+          <!-- Liste des utilisateurs -->
+          <h3 class="dashboard-userlist-title">Liste des utilisateurs</h3>
+          <table class="dashboard-userlist-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Itération sur la liste des utilisateurs -->
+              <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                  <!-- Conteneur pour les boutons d'actions -->
+                  <div class="dashboard-action-container">
+                    <button class="dashboard-btn edit-btn" (click)="editUser(user)" [attr.aria-label]="'Modifier ' + user.name">Modifier</button>
+                    <button class="dashboard-btn details-btn" (click)="viewDetails(user)" [attr.aria-label]="'Afficher les détails de ' + user.name">Détails</button>
+                    <button class="dashboard-btn delete-btn" (click)="deleteUser(user)" [attr.aria-label]="'Supprimer ' + user.name">Supprimer</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    </div>
+  </div>
+  
