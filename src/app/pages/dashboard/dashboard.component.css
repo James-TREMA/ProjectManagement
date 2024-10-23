@@ -19,8 +19,8 @@
 /* En-tête avec le bouton de déconnexion légèrement décalé vers le bas */
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Alignement modifié pour que le bouton soit en dessous du titre */
+    justify-content: center; /* Center the title horizontally */
+    align-items: center; /* Ensure the title and button are aligned vertically */
     margin-bottom: 20px;
 }
 
