@@ -4,15 +4,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly mockUser = { email: 'admin@example.com', password: 'admin123' }; // Utilisateur mock
-
-  constructor() { }
+  private isAuthenticated = false; // Par défaut, l'utilisateur n'est pas connecté
 
   login(email: string, password: string): boolean {
-    return email === this.mockUser.email && password === this.mockUser.password;
+    // Logique d'authentification mock
+    if (email === 'admin@example.com' && password === 'admin123') {
+      this.isAuthenticated = true;
+      return true;
+    }
+    return false;
+  }
+
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
   }
 
   logout() {
-    // Logique de déconnexion
+    this.isAuthenticated = false;
   }
 }
