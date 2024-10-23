@@ -1,19 +1,26 @@
 <div class="dashboard-page-wrapper">
     <div class="dashboard-container">
-        <!-- En-tête avec le bouton de déconnexion en haut à droite -->
+        <!-- En-tête avec le bouton de déconnexion légèrement décalé vers le bas -->
         <div class="header">
             <h1 class="dashboard-title">Bienvenue dans le tableau de bord</h1>
-            <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
+            <div class="logout-container">
+                <button class="dashboard-btn logout-btn" (click)="logout()" [attr.aria-label]="'Déconnexion de l\'application'">Déconnexion</button>
+            </div>
         </div>
 
         <section class="dashboard-section">
-          <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
-          <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
-          
-          <!-- Bouton pour ajouter un nouvel utilisateur -->
-          <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
-          
-          <!-- Liste des utilisateurs -->
+          <!-- Gestion des utilisateurs déplacé plus bas avec le bouton aligné différemment -->
+          <div class="user-management">
+            <div class="user-management-header">
+              <h2 class="dashboard-subtitle">Gestion des utilisateurs</h2>
+              <p class="dashboard-text">Vous pouvez ajouter, modifier ou supprimer des utilisateurs ci-dessous :</p>
+            </div>
+            
+            <!-- Bouton pour ajouter un nouvel utilisateur déplacé à droite -->
+            <button class="dashboard-btn add-user-btn" (click)="navigateToAddUser()" [attr.aria-label]="'Ajouter un nouvel utilisateur'">Ajouter un utilisateur</button>
+          </div>
+
+          <!-- Liste des utilisateurs reste en place -->
           <h3 class="dashboard-userlist-title">Liste des utilisateurs</h3>
           <table class="dashboard-userlist-table">
             <thead>
