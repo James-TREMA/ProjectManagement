@@ -6,26 +6,39 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule], // Ajout des imports nécessaires ici
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  users = [
+    { name: 'John Doe', email: 'john.doe@example.com', role: 'Utilisateur' },
+    { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'Administrateur' }
+  ];
 
   constructor(private authService: AuthService, private router: Router) {}
 
   logout() {
-    this.authService.logout(); // Appel à la méthode logout du service d'authentification
-    this.router.navigate(['/login']); // Rediriger vers la page de connexion
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
-  // Naviguer vers la page d'ajout d'utilisateur
   navigateToAddUser() {
-    this.router.navigate(['/add-user']); // Assurez-vous que la route /add-user existe dans app.routes.ts
+    this.router.navigate(['/add-user']);
   }
 
-  // Naviguer vers la liste des utilisateurs
-  navigateToUserList() {
-    this.router.navigate(['/user-list']); // Assurez-vous que la route /user-list existe dans app.routes.ts
+  editUser(user: any) {
+    // Logique pour modifier un utilisateur
+    console.log('Modifier utilisateur :', user);
+  }
+
+  viewDetails(user: any) {
+    // Logique pour afficher les détails de l'utilisateur
+    console.log('Détails utilisateur :', user);
+  }
+
+  deleteUser(user: any) {
+    // Logique pour supprimer un utilisateur
+    console.log('Supprimer utilisateur :', user);
   }
 }
